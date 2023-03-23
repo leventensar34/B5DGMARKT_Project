@@ -1,6 +1,9 @@
 package com.digimarkt.page;
 
 import com.digimarkt.utilities.BrowserUtils;
+import com.digimarkt.utilities.Driver;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -39,6 +42,14 @@ public class RegisterPage extends BasePage {
     @FindBy(xpath = "//*[text()='Continue']")
     public WebElement createdAccountContinueBtn;
 
+    @FindBy(xpath = " //*[text()=' Warning: E-Mail Address is already registered!']")
+    public WebElement sameEmailWarningMessage;
+
+    @FindBy(xpath = " //*[@class='form-group required has-error']/div")
+    public WebElement verifyErrorMessage;
+
+
+
 
 
     public void positiveRegisterCredential_Mtd(String firstname, String lastname, String email, String telephone, String password, String passwordConfirm) {
@@ -56,5 +67,6 @@ public class RegisterPage extends BasePage {
         registerPasswordConfirmInputBox.sendKeys(passwordConfirm);
         BrowserUtils.waitFor(2);
     }
+
 
 }

@@ -53,7 +53,8 @@ public class RegisterStep_Def {
     }
 
     @Then("The user verify that the error message {string}")
-    public void theUserVerifyThatTheErrorMessageMessage() {
-
+    public void theUserVerifyThatTheErrorMessageMessage(String expectedMessage) {
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(expectedMessage,registerPage.verifyErrorMessage.getText());
     }
 }
