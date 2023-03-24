@@ -28,7 +28,7 @@ Feature: Register Functionality
 
   #US03_TC02
 
-  Scenario Outline:Negative scenario As a user I should be able to see the error message when I fill with invalid credential in the required field
+  Scenario Outline:Negative scenario-1 As a user I should be able to see the error message when I fill with invalid credential in the required field
     And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
     Then The user verify that the error message '<message>'
@@ -60,7 +60,7 @@ Feature: Register Functionality
 
    #US03_TC03 bug
   @wip2
-  Scenario Outline: Negative scenario As a user I can NOT create a Register Account when I entered with invalid credential in the required field
+  Scenario Outline: Negative scenario-2 As a user I can NOT create a Register Account when I entered with invalid credential in the required field
     And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
     Then The user verify that the succesfully message '<message>'
