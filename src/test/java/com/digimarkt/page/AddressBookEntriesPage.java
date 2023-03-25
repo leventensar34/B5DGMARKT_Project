@@ -62,11 +62,20 @@ public class AddressBookEntriesPage extends BasePage{
     public WebElement firstNameDangerMessage_loc;
     @FindBy(xpath = "//div[text()='Last Name must be between 1 and 32 characters!']")  // Last Name must be between 1 and 32 characters!
     public WebElement lastNameDangerMessage_loc;
+    @FindBy(xpath = "//div[text()='Address must be between 3 and 128 characters!']")  // Address must be between 3 and 128 characters!
+    public WebElement address1DangerMessage_loc;
+    @FindBy(xpath = "//div[text()='City must be between 2 and 128 characters!']")  // City must be between 2 and 128 characters!
+    public WebElement cityDangerMessage_loc;
+    @FindBy(xpath = "//div[text()='Postcode must be between 2 and 10 characters!']")  // Postcode must be between 2 and 10 characters!
+    public WebElement postCodeDangerMessage_loc;
+    @FindBy(xpath = "//div[text()='Please select a country!']")  // Please select a country!
+    public WebElement selectCountryDangerMessage_loc;
+    @FindBy(xpath = "//div[text()='Please select a region / state!']")  // Please select a region / state!
+    public WebElement selectRegionDangerMessage_loc;
 
 
 
-
-//    public void addAddressInfo(String inputBoxName,String userInformation ){
+    //    public void addAddressInfo(String inputBoxName,String userInformation ){
 //
 //        WebElement placeholder = Driver.get().findElement(By.name(inputBoxName));
 //    //    placeholder.clear();
