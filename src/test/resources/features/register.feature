@@ -11,7 +11,7 @@ Feature: Register Functionality
   #1-Verify that the user can register by entering all the required fields – firstname, lastname, email, telephone,password, confirm password
 
   #US03_TC01
-
+  @B5DGMAUT-30
   Scenario Outline: Positive scenario As a user I should be able to register on the website
     And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
@@ -27,7 +27,7 @@ Feature: Register Functionality
   #2-Verify that the error message is displayed when the user incorrectly fills in or does not fill in the required field.
 
   #US03_TC02
-
+  @B5DGMAUT-31
   Scenario Outline:Negative scenario-1 As a user I should be able to see the error message when I fill with invalid credential in the required field
     And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
@@ -59,7 +59,7 @@ Feature: Register Functionality
   #2-Verify that the error message is displayed when the user incorrectly fills in or does not fill in the required field.
 
    #US03_TC03 bug
-  @wip2
+  @B5DGMAUT-32
   Scenario Outline: Negative scenario-2 As a user I can NOT create a Register Account when I entered with invalid credential in the required field
     And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
