@@ -12,16 +12,16 @@ Feature: As a user, I should be able to update the address information by clicki
 
   Scenario Outline: Verify that the user can add a NEW address.
     When The user clicks on "New Address" button
-    When The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
+    And The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
     And The user clicks the "Continue" button
     Then verify "<message>"
     Examples:
       | First Name | Last Name | Company   | Address 1    | Address 2                  | City      | Post Code | Country | Region / State | message                                  |
       | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
 
-  Scenario Outline: Verify that the user can add a NEW address.
+  Scenario Outline: Verify that the user can EDIT the address.
     When The user clicks on "Edit" button
-    When The user UPDATES his/her credentials "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>"
+    And The user UPDATES his/her credentials "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>"
     And The user clicks the "Continue" button
     Then verify "<message>"
     Examples:
@@ -31,7 +31,7 @@ Feature: As a user, I should be able to update the address information by clicki
 
   Scenario Outline: Negative scenario User should NOT be able to login with invalid First Name credentials
     When The user clicks on "New Address" button
-    When The user enters "<FirstName>","<Last Name>","<Address 1>","<City>","<Post Code>","<Country>","<Region / State>" credentials
+    And The user enters "<FirstName>","<Last Name>","<Address 1>","<City>","<Post Code>","<Country>","<Region / State>" credentials
     And The user clicks the "Continue" button
     Then The warning message contains "<message>"
     Examples:
@@ -70,3 +70,14 @@ Feature: As a user, I should be able to update the address information by clicki
       | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | 12345678901 | Denmark | Copenhagen     | Your address has been successfully updated |
       | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | &&&&&&&&&   | Denmark | Copenhagen     | Your address has been successfully updated |
       | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | aAaAaAa     | Denmark | Copenhagen     | Your address has been successfully updated |
+
+  Scenario Outline: Verify that the user can
+    When The user clicks on "New Address" button
+    When The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
+    And The user switch "Default Address" from Yes to No when only one address is defined.
+    And The user clicks the "Continue" button
+    Then verify "<message>"
+    When
+    Examples:
+      | First Name | Last Name | Company   | Address 1    | Address 2                  | City      | Post Code | Country | Region / State | message                                  |
+      | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
