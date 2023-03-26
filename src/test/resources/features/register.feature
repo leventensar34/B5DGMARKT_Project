@@ -6,9 +6,6 @@ Feature: Register Functionality
     When The user navigates to "My Account" module "Register" tab
     Then The user verify that the Register Account page message "Register Account"
 
-  #Users Story : As a user I should be able to register on the website
-  #Acceptance Criteria :
-  #1-Verify that the user can register by entering all the required fields – firstname, lastname, email, telephone,password, confirm password
 
   #US03_TC01
   @B5DGMAUT-30
@@ -22,9 +19,6 @@ Feature: Register Functionality
       | firstname | lastname | email         | telephone | password | passwordConfirm |
       | Ali       | Ata      | abc@gmail.com | 0123456   | 12345    | 12345           |
 
-  #Users Story : As a user I should be able to register on the website
-  #Acceptance Criteria :
-  #2-Verify that the error message is displayed when the user incorrectly fills in or does not fill in the required field.
 
   #US03_TC02
   @B5DGMAUT-31
@@ -54,9 +48,6 @@ Feature: Register Functionality
       | Ahmet                             | Onur                              | yilmaz@gmail.com | 123456789                         | 12345    | 123             | Password confirmation does not match password!  |
 
 
-  #Users Story : As a user I should be able to register on the website
-  #Acceptance Criteria :
-  #2-Verify that the error message is displayed when the user incorrectly fills in or does not fill in the required field.
 
    #US03_TC03 bug
   @B5DGMAUT-32
