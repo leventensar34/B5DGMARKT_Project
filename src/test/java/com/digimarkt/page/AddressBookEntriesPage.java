@@ -2,6 +2,8 @@ package com.digimarkt.page;
 
 import com.digimarkt.utilities.BrowserUtils;
 import com.digimarkt.utilities.Driver;
+import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,12 +19,12 @@ public class AddressBookEntriesPage extends BasePage{
     @FindBy(xpath = "//ul[@class='dropdown-menu dropdown-menu-right pt-account'][1]/li[1]/a") // dropdownda my accounta tıklıyoruz
     public WebElement dropDownMyAccountBtn_loc;
 
-    String actualHeaderMyAccount= Driver.get().getTitle();// *** VERIFY için ***  get title ile My Account alınabilir.
+    String actualTitleMyAccount= Driver.get().getTitle();// *** VERIFY için ***  get title ile My Account alınabilir.
 
     @FindBy(xpath = "//*[text()='Address Book']") // address booka tıklıyoruz
     public WebElement addressBookBtn_loc;
 
-    String actualHeaderAddressBook= Driver.get().getTitle(); //*** VERIFY için ***  get title ile Address Book alınabilir.
+    String actualTitleAddressBook= Driver.get().getTitle(); //*** VERIFY için ***  get title ile Address Book alınabilir.
 
     @FindBy(xpath = "//*[text()='New Address']") // new adrese tıklıyoruz
     public WebElement newAddressBtn_loc;
@@ -87,18 +89,27 @@ public class AddressBookEntriesPage extends BasePage{
         select.selectByValue(zone);
     }
 
-    public void navigateToMyAccount_mtd(){
+    public void navigatetoMyAccountToMyAccountMenu(String module, String button) {
         BrowserUtils.waitFor(2);
-        navigateToMyAccountBtn_loc.click();
-        dropDownMyAccountBtn_loc.click();
+        Driver.get().findElement(By.xpath("//span[text()='" + module + "']")).click();
+        BrowserUtils.waitFor(2);
+        Driver.get().findElement(By.xpath("//*[text()='" + button + "']")).click();
+        BrowserUtils.waitFor(1);
+    }
+    //    public void navigateToMyAccount_mtd(){
+//        BrowserUtils.waitFor(2);
+//        navigateToMyAccountBtn_loc.click();
+//        dropDownMyAccountBtn_loc.click();
+//    }
+
+
+    public void navigateToAddressBookMenu(String button){
+        BrowserUtils.waitFor(1);
+        Driver.get().findElement(By.xpath("//*[text()='"+button+"']")).click();
     }
 
-
     public void addNewAddress_mtd(String firstname,String lastname,String company,String address1,String address2,String city,String postCode,String country,String zone){
-        BrowserUtils.waitFor(2);
-        addressBookBtn_loc.click();
         BrowserUtils.waitFor(1);
-        newAddressBtn_loc.click();
         firstName_loc.sendKeys(firstname);
         lastName_loc.sendKeys(lastname);
         company_loc.sendKeys(company);
@@ -109,10 +120,14 @@ public class AddressBookEntriesPage extends BasePage{
         selectCountry(country);
         selectZone(zone);
     }
+    public void clear_mtd(){
+
+        List<String> clearAll = BrowserUtils.getElementsText(common_loc);
+        clearAll.clear();
+
+    }
 
     public void editAddress_mtd(String firstname,String lastname,String company,String address1,String address2,String city,String postCode,String country,String zone){
-        BrowserUtils.waitFor(2);
-        addressBookBtn_loc.click();
         BrowserUtils.waitFor(1);
         editAddressBtn_loc.click();
         firstName_loc.sendKeys(firstname);
@@ -126,13 +141,27 @@ public class AddressBookEntriesPage extends BasePage{
         selectZone(zone);
     }
 
-
-    public void clear_mtd(){
-
-        List<String> clearAll = BrowserUtils.getElementsText(common_loc);
-        clearAll.clear();
-
+    public void invalidAddress_mtd(String firstname,String lastname,String address1,String city,String postCode,String country,String zone){
+        BrowserUtils.waitFor(2);
+        addressBookBtn_loc.click();
+        BrowserUtils.waitFor(1);
+        editAddressBtn_loc.click();
+        firstName_loc.sendKeys(firstname);
+        lastName_loc.sendKeys(lastname);
+        address_1_loc.sendKeys(address1);
+        city_loc.sendKeys(city);
+        postcode_loc.sendKeys(postCode);
+        selectCountry(country);
+        selectZone(zone);
     }
+
+    public void verifyPopUpMessage_mtd(String expectedMessage){
+        Alert alert = Driver.get().switchTo().alert();
+        String actualMessage = alert.getText();
+        Assert.assertEquals("Message is match", expectedMessage,actualMessage);
+    }
+
+
 
 
 

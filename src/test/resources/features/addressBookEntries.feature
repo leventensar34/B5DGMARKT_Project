@@ -1,3 +1,4 @@
+@wip
 Feature: As a user, I should be able to update the address information by clicking the Address Book tab under the My Account module.
 
   Background: The User should be able to login with valid credentials
@@ -10,29 +11,27 @@ Feature: As a user, I should be able to update the address information by clicki
     When The user goes and clicks on "Address Book" button
     Then The user should be navigate to the Address Book page and able to see the "Address Book" as title
 
-  Scenario Outline: Verify that the user can add a NEW address.
-    When The user clicks on "New Address" button
+  Scenario Outline: Verify that the user can add a NEW address and then EDIT address.
+    When The user clicks on New Address button
     And The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
-    And The user clicks the "Continue" button
-    Then verify "<message>"
+    And The user clicks the Continue button
+    Then The user verify "<message>"
     Examples:
       | First Name | Last Name | Company   | Address 1    | Address 2                  | City      | Post Code | Country | Region / State | message                                  |
       | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
-
-  Scenario Outline: Verify that the user can EDIT the address.
-    When The user clicks on "Edit" button
-    And The user UPDATES his/her credentials "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>"
-    And The user clicks the "Continue" button
-    Then verify "<message>"
+    When The user clicks on Edit button
+    And The user UPDATES credentials "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>"
+    And The user clicks the Continue button
+    Then The user verify "<message>"
     Examples:
       | First Name | Last Name | Company            | Address 1           | Address 2 | City   | Post Code | Country | Region / State | message                                    |
       | Betül      | Melike    | Hayırlısı İnşallah | Perihan Abla Sokağı |           | Viyana | 1010      | Denmark | Copenhagen     | Your address has been successfully updated |
 
 
-  Scenario Outline: Negative scenario User should NOT be able to login with invalid First Name credentials
-    When The user clicks on "New Address" button
+  Scenario Outline: Negative scenario- User should NOT be able to login with invalid credentials
+    When The user clicks on New Address button
     And The user enters "<FirstName>","<Last Name>","<Address 1>","<City>","<Post Code>","<Country>","<Region / State>" credentials
-    And The user clicks the "Continue" button
+    And The user clicks the Continue button
     Then The warning message contains "<message>"
     Examples:
       | FirstName                         | Last Name                         | Address 1                                                                                                                         | City                                                                                                                              | Post Code   | Country        | Region / State | message                                         |
@@ -53,9 +52,9 @@ Feature: As a user, I should be able to update the address information by clicki
       | Seda                              | Melike                            | Perihan Abla Sokağı                                                                                                               | Aberdeen                                                                                                                          | AB10        | United Kingdom |                | Please select a region / state!                 |
 
   Scenario Outline: Negative scenario for BUG- User should NOT be able to login with invalid credentials
-    When The user clicks on "New Address" button
+    When The user clicks on New Address button
     When The user enters "<FirstName>","<Last Name>","<Address 1>","<City>","<Post Code>","<Country>","<Region / State>" credentials
-    And The user clicks the "Continue" button
+    And The user clicks the Continue button
     Then The warning message contains "<message>"
     Examples:
       | FirstName | Last Name | Address 1           | City     | Post Code   | Country | Region / State | message                                    |
@@ -71,13 +70,14 @@ Feature: As a user, I should be able to update the address information by clicki
       | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | &&&&&&&&&   | Denmark | Copenhagen     | Your address has been successfully updated |
       | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | aAaAaAa     | Denmark | Copenhagen     | Your address has been successfully updated |
 
-  Scenario Outline: Verify that the user can
-    When The user clicks on "New Address" button
+  Scenario Outline: Negative scenario for BUG- Verify that the user can NOT change default address button Yes to No
+    When The user clicks on New Address button
     When The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
-    And The user switch "Default Address" from Yes to No when only one address is defined.
-    And The user clicks the "Continue" button
-    Then verify "<message>"
-    When
+    And The user switch Default Address from Yes to No
+    And The user clicks the Continue button
+    Then The user verify "<message>"
+    When The user clicks on Edit button again
+    Then The user verify Default Address is on the "No"
     Examples:
       | First Name | Last Name | Company   | Address 1    | Address 2                  | City      | Post Code | Country | Region / State | message                                  |
       | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
