@@ -50,8 +50,10 @@ public class AddressBookEntriesPage extends BasePage{
     public WebElement country_id_loc;
     @FindBy(xpath = "//select[@name='zone_id']") //  drop downdan ülke seçiyoruz.
     public WebElement zone_id_loc;  //  drop downdan bölge seçiyoruz.
+
     @FindBy(xpath = "//label[@class='col-sm-2 control-label']")
     public List<WebElement> common_loc;
+
     @FindBy(xpath = "//label[@class='radio-inline'][1]/input")  // default adres bölümünde YES butonu
     public WebElement defaultAddressBtnYes_loc;
     @FindBy(xpath = "//label[@class='radio-inline'][2]/input")  // default adres bölümünde NO butonu

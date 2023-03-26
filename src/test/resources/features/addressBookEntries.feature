@@ -1,6 +1,6 @@
-@wip
-Feature: As a user, I should be able to update the address information by clicking the Address Book tab under the My Account module.
 
+Feature: As a user, I should be able to update the address information by clicking the Address Book tab under the My Account module.
+  @wip1
   Background: The User should be able to login with valid credentials
     Then The user should be on the main page and can see the "Your Store" text as title
     When The user navigates to "My Account" module "Login" tab
@@ -13,14 +13,14 @@ Feature: As a user, I should be able to update the address information by clicki
 
   Scenario Outline: Verify that the user can add a NEW address and then EDIT address.
     When The user clicks on New Address button
-    And The user enters NEW "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>" credentials
+    And The user enters NEW "<First Name>" "<Last Name>" "<Company>" "<Address 1>" "<Address 2>" "<City>" "<Post Code>" "<Country>" "<Region / State>" credentials
     And The user clicks the Continue button
     Then The user verify "<message>"
     Examples:
       | First Name | Last Name | Company   | Address 1    | Address 2                  | City      | Post Code | Country | Region / State | message                                  |
       | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
     When The user clicks on Edit button
-    And The user UPDATES credentials "<First Name>","<Last Name>","<Company>","<Address 1>","<Address 2>","<City>","<Post Code>","<Country>","<Region / State>"
+    And The user UPDATES credentials "<First Name>" "<Last Name>" "<Company>" "<Address 1>" "<Address 2>" "<City>" "<Post Code>" "<Country>" "<Region / State>"
     And The user clicks the Continue button
     Then The user verify "<message>"
     Examples:
