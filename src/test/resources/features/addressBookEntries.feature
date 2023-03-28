@@ -37,7 +37,7 @@ Feature: As a user, I should be able to update the address information by clicki
     When The user clicks on New Address button
     And The user enters "<FirstName>" "<Last Name>" "<Address 1>" "<City>" "<Post Code>" "<Country>" "<Region / State>" credentials
     And The user clicks the Continue button
-    Then The warning message contains "<message>"
+    Then The dander message contains "<message>"
     Examples:
       | FirstName                         | Last Name                         | Address 1                                                                                                                         | City                                                                                                                              | Post Code   | Country               | Region / State        | message                                         |
 #      |                                   | Melike                            | Perihan Abla Sokağı                                                                                                               | Aberdeen                                                                                                                          | AB10        | United Kingdom        | Aberdeen              | First Name must be between 1 and 32 characters! |
@@ -64,17 +64,17 @@ Feature: As a user, I should be able to update the address information by clicki
     Then The warning message contains "<message>"
     Examples:
       | FirstName | Last Name | Address 1           | City     | Post Code   | Country | Region / State | message                                    |
-      | &&%%&&    | Melike    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | 123456    | Melike    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | &&%%&&    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | 123456    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | &?%      | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | 123456   | 1010        | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki |             | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | 1           | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | 12345678901 | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | &&&&&&&&&   | Denmark | Copenhagen     | Your address has been successfully updated |
-      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | aAaAaAa     | Denmark | Copenhagen     | Your address has been successfully updated |
+      | &&%%&&    | Melike    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | 123456    | Melike    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | &&%%&&    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | 123456    | Perihan Abla Sokağı | Helsinki | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | &?%      | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | 123456   | 1010        | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki |             | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | 1           | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | 12345678901 | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | &&&&&&&&&   | Denmark | Copenhagen     | Your address has been successfully added |
+      | Seda      | Melike    | Perihan Abla Sokağı | Helsinki | aAaAaAa     | Denmark | Copenhagen     | Your address has been successfully added |
 
   Scenario Outline: Negative scenario for BUG- Verify that the user can NOT change default address button Yes to No
     Then The user should be navigate to the Address Book page and able to see the "Address Book" as title

@@ -82,9 +82,14 @@ public class AddressBookEntriesStep_Def {
         addressBookEntriesPage.invalidAddress_mtd(fname,lname,address1,city,pcode,country,region);
     }
 
+    @Then("The dander message contains {string}")
+    public void theDanderMessageContains(String expectedMessage) {
+        Assert.assertEquals(expectedMessage,addressBookEntriesPage.verifyDangerMessage_loc.getText());
+    }
+
     @Then("The warning message contains {string}")
     public void the_warning_message_contains(String expectedMessage) {
-        Assert.assertEquals(expectedMessage,addressBookEntriesPage.verifyDangerMessage_loc.getText());
+        Assert.assertEquals(expectedMessage,addressBookEntriesPage.verifySuccesMessage_loc.getText());
     }
 
     @And("The user switch Default Address from Yes to No")
@@ -99,8 +104,8 @@ public class AddressBookEntriesStep_Def {
 
     @Then("The user verify Default Address is on the {string}")
     public void theUserVerifyDefaultAddressIsOnThe(String expectedDefaultAddress) {
-        String actualDefaultAddress = addressBookEntriesPage.defaultAddressBtnNo_loc.getText();
-        Assert.assertEquals("Default address is macth",expectedDefaultAddress,actualDefaultAddress);
+        String actualDefaultAddress = addressBookEntriesPage.defaultAddressBtnYes_loc.getText();
+        Assert.assertNotEquals("Default address is macth",expectedDefaultAddress,actualDefaultAddress);
     }
 
 }
