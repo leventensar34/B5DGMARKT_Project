@@ -1,7 +1,7 @@
 Feature: As a user, I should be able to update the address information by clicking the Address Book tab under the My Account module.
 
 
-  Background:
+  Background:Login and navigate Adress Book page
     Given The user can logın successfully
     When The user navigates to "My Account" module "Login" tab
     And The user enters the personal username and password
@@ -21,7 +21,7 @@ Feature: As a user, I should be able to update the address information by clicki
       | Zeynep     | Elif      | Hayırlısı | Susam Sokağı | Barış Manço, Moda, Kadıköy | Amsterdam | 1020      | Finland | Oulun lääni    | Your address has been successfully added |
 
 
-  Scenario Outline:
+  Scenario Outline: Verify that the user can EDIT address
     Then The user should be navigate to the Address Book page and able to see the "Address Book" as title
     When The user clicks on Edit button
     And The user UPDATES credentials "<First Name>" "<Last Name>" "<Company>" "<Address 1>" "<Address 2>" "<City>" "<Post Code>" "<Country>" "<Region / State>"
