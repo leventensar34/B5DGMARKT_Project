@@ -2,9 +2,9 @@ Feature: Register Functionality
 
   Background:
     Given The user can first login successfully
-    Then The user should be on the main page and can see the "Your Store" text as title
-    When The user navigates to "My Account" module "Register" tab
-    Then The user verify that the Register Account page message "Register Account"
+    And The user should be on the main page and can see the "Your Store" text as title
+    And The user navigates to "My Account" module "Register" tab
+    And The user verify that the Register Account page message "Register Account"
 
 
   #US03_TC01
@@ -17,7 +17,7 @@ Feature: Register Functionality
     Then The user verify that on the main Account page and see the "My Account" text as title
     Examples:
       | firstname | lastname | email         | telephone | password | passwordConfirm |
-      | Ali       | Ata      | abc@gmail.com | 0123456   | 12345    | 12345           |
+      | Ali       | Ata      | abc1@gmail.com | 0123456   | 12345    | 12345           |
 
 
   #US03_TC02
@@ -57,17 +57,17 @@ Feature: Register Functionality
     Then The user verify that the succesfully message '<message>'
     Examples:
       | firstname | lastname | email                    | telephone  | password               | passwordConfirm        | message                        |
-      | 1111      | Kara     | vahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | &%        | Kara     | sahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | 1111     | kahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | tapot@hotmail.com.com    | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | spot@hotmail.com.com     | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | kot@hotmail.com.com      | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | 1111      | 1111     | st@hotmail.com.com       | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | $&        | %&       | gramazan@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | gamazan@hotmail.com.com  | 1234       | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | gmazan@hotmail.com.com   | kerem      | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | gazan@hotmail.com.com    | $%&        | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Ahmet     | Onur     | yilmazs@gmail.co         | 123456789  | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Ahmet     | Onur     | yildiz@gmail.com         | 123456789  | 1234567890123456789012 | 1234567890123456789012 | Your Account Has Been Created! |
+      | 1111      | Kara     | lvahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | &%        | Kara     | lsahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | 1111     | lkahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | ltapot@hotmail.com.com    | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | lspot@hotmail.com.com     | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | lkot@hotmail.com.com      | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | 1111      | 1111     | lst@hotmail.com.com       | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | $&        | %&       | lgramazan@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | lgamazan@hotmail.com.com  | 1234       | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | lgmazan@hotmail.com.com   | kerem      | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | lgazan@hotmail.com.com    | $%&        | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Ahmet     | Onur     | lyilmazs@gmail.co         | 123456789  | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Ahmet     | Onur     | lyildiz@gmail.com         | 123456789  | 1234567890123456789012 | 1234567890123456789012 | Your Account Has Been Created! |
 
