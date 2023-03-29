@@ -1,3 +1,4 @@
+@wäp
 Feature: Register Functionality
 
   Background:
@@ -10,20 +11,20 @@ Feature: Register Functionality
   #US03_TC01
   @B5DGMAUT-30
   Scenario Outline: Positive scenario As a user I should be able to register on the website
-    And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
+    When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
     Then The user verify that the succesfully message "Your Account Has Been Created!"
     And The user click the Continue button
     Then The user verify that on the main Account page and see the "My Account" text as title
     Examples:
-      | firstname | lastname | email         | telephone | password | passwordConfirm |
-      | Ali       | Ata      | abc1@gmail.com | 0123456   | 12345    | 12345           |
+      | firstname | lastname | email          | telephone | password | passwordConfirm |
+      | Ali       | Ata      | abc2@gmail.com | 0123456   | 12345    | 12345           |
 
 
   #US03_TC02
   @B5DGMAUT-31
   Scenario Outline:Negative scenario-1 As a user I should be able to see the error message when I fill with invalid credential in the required field
-    And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
+    When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
     Then The user verify that the error message '<message>'
 
@@ -52,22 +53,22 @@ Feature: Register Functionality
    #US03_TC03 bug
   @B5DGMAUT-32
   Scenario Outline: Negative scenario-2 As a user I can NOT create a Register Account when I entered with invalid credential in the required field
-    And The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
+    When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
     And The user click the Privacy Policy and Continue box button
     Then The user verify that the succesfully message '<message>'
     Examples:
-      | firstname | lastname | email                    | telephone  | password               | passwordConfirm        | message                        |
-      | 1111      | Kara     | lvahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | &%        | Kara     | lsahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | 1111     | lkahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | ltapot@hotmail.com.com    | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | lspot@hotmail.com.com     | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | $&       | lkot@hotmail.com.com      | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | 1111      | 1111     | lst@hotmail.com.com       | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | $&        | %&       | lgramazan@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | lgamazan@hotmail.com.com  | 1234       | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | lgmazan@hotmail.com.com   | kerem      | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Mert      | Kara     | lgazan@hotmail.com.com    | $%&        | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Ahmet     | Onur     | lyilmazs@gmail.co         | 123456789  | 12345                  | 12345                  | Your Account Has Been Created! |
-      | Ahmet     | Onur     | lyildiz@gmail.com         | 123456789  | 1234567890123456789012 | 1234567890123456789012 | Your Account Has Been Created! |
+      | firstname | lastname | email                     | telephone  | password               | passwordConfirm        | message                        |
+      | 1111      | Kara     | alvahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | &%        | Kara     | alsahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | 1111     | alkahtapot@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | altapot@hotmail.com.com    | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | alspot@hotmail.com.com     | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | $&       | alkot@hotmail.com.com      | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | 1111      | 1111     | alst@hotmail.com.com       | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | $&        | %&       | algramazan@hotmail.com.com | 0123456789 | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | algamazan@hotmail.com.com  | 1234       | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | algmazan@hotmail.com.com   | kerem      | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Mert      | Kara     | algazan@hotmail.com.com    | $%&        | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Ahmet     | Onur     | alyilmazs@gmail.co         | 123456789  | 12345                  | 12345                  | Your Account Has Been Created! |
+      | Ahmet     | Onur     | alyildiz@gmail.com         | 123456789  | 1234567890123456789012 | 1234567890123456789012 | Your Account Has Been Created! |
 
