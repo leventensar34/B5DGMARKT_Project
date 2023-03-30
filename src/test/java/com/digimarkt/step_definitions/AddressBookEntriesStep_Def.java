@@ -73,7 +73,6 @@ public class AddressBookEntriesStep_Def {
 
     @And("The user UPDATES credentials {string} {string} {string} {string} {string} {string} {string} {string} {string}")
     public void theUserUPDATESCredentials(String name, String lname, String company, String address1, String address2, String city, String postCode, String country, String state) {
-//        addressBookEntriesPage.clear_mtd();
         addressBookEntriesPage.editAddress_mtd(name,lname,company,address1,address2,city,postCode,country,state);
     }
 

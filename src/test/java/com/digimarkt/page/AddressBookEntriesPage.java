@@ -99,12 +99,6 @@ public class AddressBookEntriesPage extends BasePage{
         selectCountry(country);
         selectZone(zone);
     }
-//    public void clear_mtd(){
-//        BrowserUtils.waitFor(2);
-//        List<String> clearAll = BrowserUtils.getElementsText(common_loc);
-//        clearAll.clear();
-//
-//    }
 
     public void editAddress_mtd(String firstname,String lastname,String company,String address1,String address2,String city,String postCode,String country,String zone){
         BrowserUtils.waitFor(1);
