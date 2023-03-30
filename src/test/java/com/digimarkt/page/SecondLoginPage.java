@@ -24,6 +24,8 @@ public class SecondLoginPage extends BasePage {
 
     @FindBy(xpath = "//button[text()='×']")
     public WebElement successMessage;
+    //@FindBy(xpath = "//div[@class='alert alert-success']")
+    //public WebElement successMessage;
 
     public void loginHomePage() {
         usernameInputBox.sendKeys(ConfigurationReader.get("userLoginEmail"));

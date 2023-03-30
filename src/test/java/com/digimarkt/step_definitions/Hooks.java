@@ -32,6 +32,6 @@ public class Hooks {
             scenario.attach(screeshot, "image/png", "screenshot");
         }
 
-       // Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
