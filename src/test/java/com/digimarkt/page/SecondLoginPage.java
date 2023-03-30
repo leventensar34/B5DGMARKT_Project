@@ -22,7 +22,10 @@ public class SecondLoginPage extends BasePage {
     @FindBy(xpath = "//span[text() = 'Login']")
     public WebElement loginButton;
 
-    @FindBy(xpath = "//button[text()='×']")
+//    @FindBy(xpath = "//button[text()='×']")
+//    public WebElement successMessage;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement successMessage;
 
     public void loginHomePage() {
