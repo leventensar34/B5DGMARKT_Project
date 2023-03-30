@@ -1,4 +1,3 @@
-
 Feature: Register Functionality
 
   Background:
@@ -8,7 +7,6 @@ Feature: Register Functionality
     And The user verify that the Register Account page message "Register Account"
 
 
-  #US03_TC01
   @B5DGMAUT-30
   Scenario Outline: Positive scenario As a user I should be able to register on the website
     When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
@@ -21,7 +19,6 @@ Feature: Register Functionality
       | Ali       | Ata      | abc3@gmail.com | 0123456   | 12345    | 12345           |
 
 
-  #US03_TC02
   @B5DGMAUT-31
   Scenario Outline:Negative scenario-1 As a user I should be able to see the error message when I fill with invalid credential in the required field
     When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
@@ -50,7 +47,6 @@ Feature: Register Functionality
 
 
 
-   #US03_TC03 bug
   @B5DGMAUT-32
   Scenario Outline: Negative scenario-2 As a user I can NOT create a Register Account when I entered with invalid credential in the required field
     When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
