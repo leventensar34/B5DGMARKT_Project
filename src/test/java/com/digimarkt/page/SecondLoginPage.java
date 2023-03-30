@@ -22,13 +22,26 @@ public class SecondLoginPage extends BasePage {
     @FindBy(xpath = "//span[text() = 'Login']")
     public WebElement loginButton;
 
-    @FindBy(xpath = "//button[text()='×']")
+//    @FindBy(xpath = "//button[text()='×']")
+//    public WebElement successMessage;
+
+    @FindBy(xpath = "//div[@class='alert alert-success']")
     public WebElement successMessage;
+    //@FindBy(xpath = "//div[@class='alert alert-success']")
+    //public WebElement successMessage;
 
     public void loginHomePage() {
         usernameInputBox.sendKeys(ConfigurationReader.get("userLoginEmail"));
         BrowserUtils.waitFor(1);
         passwordInputBox.sendKeys(ConfigurationReader.get("userLoginPassword"));
+        BrowserUtils.waitFor(1);
+        loginButton.click();
+
+    }
+    public void loginHomePage(String userEmail,String password) {
+        usernameInputBox.sendKeys(userEmail);
+        BrowserUtils.waitFor(1);
+        passwordInputBox.sendKeys(password);
         BrowserUtils.waitFor(1);
         loginButton.click();
 
