@@ -30,4 +30,6 @@ public class FirstLoginPage extends BasePage {
         popUpWindows.click();
         closePopUpBtn.click();
     }
+
+
 }
