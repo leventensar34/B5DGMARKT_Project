@@ -3,6 +3,8 @@ package com.digimarkt.step_definitions;
 import com.digimarkt.page.SecondLoginPage;
 import com.digimarkt.utilities.BrowserUtils;
 import com.digimarkt.utilities.Driver;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -34,4 +36,10 @@ public class LoginStep_Def {
         Assert.assertEquals(expectedMessage, secondLoginPage.successMessage.getText());
 
     }
+    @Given("The user enters the personal {string} and {string}")
+    public void the_user_enters_the_personal_and(String userEmail, String password) {
+        secondLoginPage.loginHomePage(userEmail, password);
+    }
+
+
 }

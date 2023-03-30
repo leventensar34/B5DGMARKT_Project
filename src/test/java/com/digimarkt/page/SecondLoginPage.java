@@ -33,4 +33,12 @@ public class SecondLoginPage extends BasePage {
         loginButton.click();
 
     }
+    public void loginHomePage(String userEmail,String password) {
+        usernameInputBox.sendKeys(userEmail);
+        BrowserUtils.waitFor(1);
+        passwordInputBox.sendKeys(password);
+        BrowserUtils.waitFor(1);
+        loginButton.click();
+
+    }
 }
