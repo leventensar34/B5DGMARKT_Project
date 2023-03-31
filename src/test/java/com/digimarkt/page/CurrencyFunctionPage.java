@@ -213,16 +213,24 @@ public class CurrencyFunctionPage extends BasePage{
 
     public void currencyVerifyMetod(String expectedCurrency){
 
+        char expectedCurrency1 = expectedCurrency.charAt(0);
+
         BrowserUtils.waitFor(1);
         String actualPriseAndCurrency= Driver.get().findElement(By.xpath("//table[@class='table table-bordered table-hover']/tbody/tr/td[5]")).getText();
-        char actualCurrency = actualPriseAndCurrency.charAt(0);
-        char expectedCurrency1= expectedCurrency.charAt(0);
+
+        if((expectedCurrency1=='£') || (expectedCurrency1=='$')) {
+            char actualCurrency = actualPriseAndCurrency.charAt(0);
+            System.out.println("actualCurrency = " + actualCurrency);
+            System.out.println("expectedCurrency1 = " + expectedCurrency1);
+            Assert.assertTrue(expectedCurrency1==actualCurrency);
+        }else{
+            char actualCurrency = actualPriseAndCurrency.charAt(actualPriseAndCurrency.length()-1);
+            System.out.println("actualCurrency = " + actualCurrency);
+            System.out.println("expectedCurrency1 = " + expectedCurrency1);
+            Assert.assertTrue(expectedCurrency1==actualCurrency);
+        }
 
 
-        System.out.println("currency = " + actualCurrency);
-        System.out.println("expectedCurrency1 = " + expectedCurrency1);
-
-        Assert.assertTrue(expectedCurrency1==actualCurrency);
 
     }
 

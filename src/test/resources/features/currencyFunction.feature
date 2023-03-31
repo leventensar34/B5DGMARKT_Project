@@ -22,7 +22,7 @@ Feature: Currency Function
 
   @B5DGMAUT-35
   Scenario Outline: The user should be able to complete the purchase with the currency of their choise.
-    Given The user selects  "<currency>"
+    Given The user selects  "<currency1>"
     When The user goes to "<category>" page from Category
     And The user select a product and adds the selected product to the cart
     And The user goes to cart
@@ -31,11 +31,13 @@ Feature: Currency Function
     And The user enters "<FirsName>","<LastName>", "<Adress1>", "<City>", "<PostCode>", "<Country>", "<RegionState>"
     And The user selects the I want to use an existing address
     When The user confirms Term&Condition
-    Then The user sees that the product currency is "<currency>"
+    Then The user sees that the product currency is "<currency2>"
     When The user confirms your their order
     Then The user verifies that the order was completed successfully
 
     Examples:
-      | currency         | category    | FirsName | LastName | Adress1  | City | PostCode | Country | RegionState | currency |
-      | £ Pound Sterling | Televisions | John     | Wick     | Mainstr. | Can  | 12345    | Germany | Bayern      | £        |
+      | currency1        | category    | FirsName | LastName | Adress1  | City | PostCode | Country | RegionState | currency2 |
+      | £ Pound Sterling | Televisions | John     | Wick     | Mainstr. | Can  | 12345    | Germany | Bayern      | £         |
+      | $ US Dollar      | Televisions | John     | Wick     | Mainstr. | Can  | 12345    | Germany | Bayern      | $         |
+      | € Euro           | Televisions | John     | Wick     | Mainstr. | Can  | 12345    | Germany | Bayern      | €         |
 
