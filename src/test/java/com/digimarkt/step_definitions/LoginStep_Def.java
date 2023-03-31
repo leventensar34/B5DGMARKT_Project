@@ -32,12 +32,12 @@ public class LoginStep_Def {
 
     @Then("The user should be on the dashboard page and can see the {string} success message")
     public void the_user_should_be_on_the_dashboard_page_and_can_see_the_success_message(String expectedMessage) {
-        expectedMessage += "\n×";
+//        expectedMessage += "\n×";
         BrowserUtils.waitFor(1);
-        System.out.println(secondLoginPage.successMessage.getText());
-
-        Assert.assertTrue(secondLoginPage.successMessage.getText().equals(expectedMessage));
-        //Assert.assertEquals(expectedMessage, secondLoginPage.successMessage.getText());
+//        System.out.println(secondLoginPage.successMessage.getText());
+//
+//        Assert.assertTrue(secondLoginPage.successMessage.getText().equals(expectedMessage));
+        Assert.assertEquals(expectedMessage, secondLoginPage.successMessage.getText());
 
     }
     @Given("The user enters the personal {string} and {string}")

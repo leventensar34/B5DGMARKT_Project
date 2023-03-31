@@ -35,8 +35,8 @@ Feature: My Account-User can Edit account Information
 @B5DGMAUT-58
   Scenario Outline: Negative BUQ scenario Verify that you as a user can update account Information on the website
     Given  The user updates "<FirstName>" "<LastName>" "<E-Mail>" "<Telephone>"
-    And    The user clicks the Continue button
-    Then   The user verify "<Message>"
+    And    The user clicks on the Continue button
+    Then   The user verify this "<Message>"
     Examples:
       | FirstName | LastName | E-Mail         | Telephone  | Message                                              |
       | 12345     | Gratel   | test1@test.com | 1234567254 | Success: Your account has been successfully updated. |

@@ -16,7 +16,7 @@ Feature: Register Functionality
     Then The user verify that on the main Account page and see the "My Account" text as title
     Examples:
       | firstname | lastname | email          | telephone | password | passwordConfirm |
-      | Ali       | Ata      | abc3@gmail.com | 0123456   | 12345    | 12345           |
+      | Ali       | Ata      | abc4@gmail.com | 0123456   | 12345    | 12345           |
 
 
   @B5DGMAUT-31
