@@ -21,7 +21,7 @@ Feature:US011 Wish List Modify Functionality
       | ASUS ROG STRIX GS-AX3000 | ASUS ROG STRIX GS-AX3000      | Networking      |
 
 
-  @B5DGMAUT-47 @B5DGMAUT-48 @us011
+  @B5DGMAUT-47 @B5DGMAUT-48
   Scenario Outline: TC004, TC005 Verify that the user should be able to add the products from wish list to cart
     And The user hover overs to "Category" menu headers and clicks "<moduleName>" sub menu headers
     And User adds "<productName>" item in his her wish list
@@ -37,7 +37,7 @@ Feature:US011 Wish List Modify Functionality
    #  | BELKIN ADAPTER CABLE     | Belkin adapter cable          | TV Accessories  | Belkin adapter cable     |
 
 
-  @B5DGMAUT-49 @B5DGMAUT-50 @us011
+  @B5DGMAUT-49 @B5DGMAUT-50
   Scenario Outline: TC006, TC007 Verify that the User should be able to delete the products from wish list
     And The user hover overs to "Category" menu headers and clicks "<moduleName>" sub menu headers
     And User adds "<productName>" item in his her wish list
