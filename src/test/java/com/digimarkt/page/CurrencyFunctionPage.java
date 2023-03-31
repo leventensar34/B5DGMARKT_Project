@@ -141,7 +141,6 @@ public class CurrencyFunctionPage extends BasePage{
     public void currencyOfProductVerifyMtd(String currencyOfProduct){
 
         String actualCurrency = currencyVerifyProduct.getText();
-        System.out.println("actualCurrency = " + actualCurrency);
         Assert.assertTrue(actualCurrency.contains(currencyOfProduct));
     }
 
@@ -208,13 +207,9 @@ public class CurrencyFunctionPage extends BasePage{
 
         if((expectedCurrency1=='£') || (expectedCurrency1=='$')) {
             char actualCurrency = actualPriseAndCurrency.charAt(0);
-            System.out.println("actualCurrency = " + actualCurrency);
-            System.out.println("expectedCurrency1 = " + expectedCurrency1);
             Assert.assertTrue(expectedCurrency1==actualCurrency);
         }else{
             char actualCurrency = actualPriseAndCurrency.charAt(actualPriseAndCurrency.length()-1);
-            System.out.println("actualCurrency = " + actualCurrency);
-            System.out.println("expectedCurrency1 = " + expectedCurrency1);
             Assert.assertTrue(expectedCurrency1==actualCurrency);
         }
 
@@ -225,8 +220,7 @@ public class CurrencyFunctionPage extends BasePage{
         String expectetCurrencyText = currencySelectBtn.getText();
         BrowserUtils.waitForVisibility(confirmOrderPriceAndCurrencyOfProduct,1);
         String actualPriseAndCurrency= confirmOrderPriceAndCurrencyOfProduct.getText();
-        System.out.println("expectetCurrencyText = " + expectetCurrencyText);
-        System.out.println("actualPriseAndCurrency = " + actualPriseAndCurrency);
+
 
     }
 
