@@ -22,6 +22,7 @@ public class WishListStepDefinitions {
 
     @Then("User validates that the wish list is empty")
     public void userValidatesThatTheWishListIsEmpty() {
+        System.out.println(" ");
     }
 
     @And("User clicks {string}")
