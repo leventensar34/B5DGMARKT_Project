@@ -6,8 +6,6 @@ Feature: Register Functionality
     And The user navigates to "My Account" module "Register" tab
     And The user verify that the Register Account page message "Register Account"
 
-#######
-
   @B5DGMAUT-30
   Scenario Outline: Positive scenario As a user I should be able to register on the website
     When The user enters all the personal credential '<firstname>' '<lastname>' '<email>' '<telephone>' '<password>' '<passwordConfirm>'
