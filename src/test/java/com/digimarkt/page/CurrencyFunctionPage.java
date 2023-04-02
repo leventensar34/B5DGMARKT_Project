@@ -184,11 +184,6 @@ public class CurrencyFunctionPage extends BasePage{
 
     }
 
-    public void currencyVerifyMetod(){
-        BrowserUtils.waitForVisibility(confirmOrderPriceAndCurrencyOfProduct,1);
-
-    }
-
     public void existingAdresSelectMtd(){
 
         BrowserUtils.scrollToElement(deliveriDetailsContinueBtn);
