@@ -14,54 +14,30 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CurrencyFunctionPage extends BasePage{
 
-    @FindBy(xpath = "(//span[text()='Home'])[2]")
-    public WebElement homeBtn;
     @FindBy(xpath = "(//img[@alt='Health & Beauty'])[2]")
     public WebElement categorySelectBtnHealtAndBeauty;
     @FindBy(xpath = "(//img[@alt='Televisions'])[2]")
     public WebElement categorySelectBtnTv;
-
     @FindBy(xpath = "(//img[@alt='Networking'])[2]")
     public WebElement categorySelectBtnNetworking;
-
     @FindBy(xpath = "(//img[@alt='TV Accessories'])[2]")
     public WebElement categorySelectBtnTvAccesories;
-
     @FindBy(xpath = "//span[text()='Currency']")
     public WebElement currencySelectBtn;
-
-    @FindBy(xpath = "//button[text()='€ Euro']")
-    public WebElement currencyName;
-
     @FindBy(xpath = "//a[text()='Cello C5020G4K 50\" Smart 4K LED-backlit LCD TV']")
     public WebElement verifyProduct_Tv;
-
     @FindBy(xpath = "//a[text()='ASUS ZenWiFi XD6 - Wi-Fi system (2 routers)']" )
     public WebElement verifyProduct_Routers;
-
     @FindBy(xpath = "//a[text()='C2G audio cable - 5 m']")
     public WebElement verifyProduct_TvAccesories;
-
     @FindBy(xpath = "(//p[@class='price'])[10]")
     public WebElement currencyVerifyProduct;
-
-    @FindBy(xpath = "(//a[contains(text(),'C5020G4K')])[2]")
-    public WebElement selectedProductPageBtn;
     @FindBy(xpath = "//button[text()='Add to Cart']")
     public WebElement selectedProductTvAddToCartBtn;
-
     @FindBy(xpath = "//button[@data-loading-text='Loading...']")
     public WebElement cartBtn;
-
     @FindBy(xpath = "(//input[@name='payment_address'])[2]")
     public WebElement newAdressRadioBtn;
-
-    @FindBy(xpath = "//input[@value='guest']")
-    public WebElement guestCheckoutBtn;
-
-    @FindBy(xpath = "//input[@id='button-account'][@type='button']")
-    public WebElement newCustomerContinueBtn;
-
     @FindBy(xpath = "//input[@id='input-payment-firstname']")
     public WebElement firstNaneInputBox;
     @FindBy(xpath = "//input[@id='input-payment-lastname']")
@@ -80,28 +56,20 @@ public class CurrencyFunctionPage extends BasePage{
     public WebElement countrySelectBtn;
     @FindBy(xpath = "//select[@id='input-payment-zone']")
     public WebElement regionStateSelectBtn;
-
     @FindBy(xpath = "//input[@id='button-payment-address']")
     public WebElement billingDetailContinueBtn;
-
     @FindBy(xpath = "//input[@id='button-shipping-address']")
     public WebElement deliveriDetailsContinueBtn;
-
     @FindBy(xpath = "//input[@id='button-shipping-method']")
     public WebElement deliveryMethodContinueBtn;
-
     @FindBy(xpath = "//input[@name='agree']")
     public WebElement paymentMethodTermConditionAgreeBtn;
-
     @FindBy(xpath = "//input[@id='button-payment-method']")
     public WebElement paymentMethodContinueBtn;
-
     @FindBy(xpath = "//table[@class='table table-bordered table-hover']/tbody/tr/td[5]")
     public WebElement confirmOrderPriceAndCurrencyOfProduct;
-
     @FindBy(xpath = "//input[@id='button-confirm']")
     public WebElement confirmOrderBtn;
-
     @FindBy(xpath = "//h1[text()='Your order has been placed!']")
     public WebElement orderVerifyMessageText;
 
@@ -217,10 +185,7 @@ public class CurrencyFunctionPage extends BasePage{
     }
 
     public void currencyVerifyMetod(){
-        String expectetCurrencyText = currencySelectBtn.getText();
         BrowserUtils.waitForVisibility(confirmOrderPriceAndCurrencyOfProduct,1);
-        String actualPriseAndCurrency= confirmOrderPriceAndCurrencyOfProduct.getText();
-
 
     }
 

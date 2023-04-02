@@ -79,10 +79,5 @@ public class CurrencyFunctionStep_Def {
 
     }
 
-    @Then("The user should be see that the product currency is the same as the default currency.")
-    public void the_user_should_be_see_that_the_product_currency_is_the_same_as_the_default_currency() {
-       currencyFunctionPage.currencyVerifyMetod();
-
-    }
 
 }
